@@ -18,7 +18,7 @@
             <tr>
                 <td><a href="{{ path('workoutcrud_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.activity }}</td>
-                <td>{% if entity.occurrenceDate %}{{ entity.occurrenceDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.occurrenceDate %}{{ entity.occurrenceDate|date('Y-m-d') }}{% endif %}</td>
                 <td>{{ entity.hours }}</td>
                 <td>
                 <ul>
