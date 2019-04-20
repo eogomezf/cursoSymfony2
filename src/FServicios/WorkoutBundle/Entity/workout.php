@@ -35,6 +35,11 @@ class workout
      */
     private $occurrenceDate;
 
+    /**
+     * @ORM\Column(name="hours", type="float")
+     */
+    private $hours;
+
 
     /**
      * Get id
@@ -90,5 +95,15 @@ class workout
     public function getOccurrenceDate()
     {
         return $this->occurrenceDate;
+    }
+
+    public function getHours()
+    {
+        return $this->hours;
+    }
+
+    public function setHours($hours)
+    {
+        $this->hours = $hours;
     }
 }
