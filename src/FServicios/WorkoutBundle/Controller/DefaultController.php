@@ -5,15 +5,47 @@ namespace FServicios\WorkoutBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * @Route("/workout")
+ */
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
-     * @Template()
+     * @Route("/", name="workout_index")    
+     * @Template("")
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return array('name' => $name);
+        
+        $workouts = array(
+            array(
+                'date' => new \DateTime(),
+                'activity' => 'swimming',
+                'hours' => 1
+            ),
+            array(
+                'date' => new \DateTime(),
+                'activity' => 'yoga',
+                'hours' => 2
+            ),array(
+                'date' => new \DateTime(),
+                'activity' => 'gym',
+                'hours' => 1.5
+            ),array(
+                'date' => new \DateTime(),
+                'activity' => 'running',
+                'hours' => 0.5
+            )
+        );
+
+        return array(
+            'workout' => $workouts,
+            'name' => 'Your Name',
+            'age' => 45
+
+        );
     }
 }
